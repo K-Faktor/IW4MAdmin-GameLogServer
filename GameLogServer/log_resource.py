@@ -12,7 +12,7 @@ class LogResource(Resource):
 
         return {
             'success': content is not None,
-            'length': 0 if content is None else len(content),
+            'length': 0 if content is None or not content else len(content),
             'data': content,
             'next_key': log_info['next_key']
         }
