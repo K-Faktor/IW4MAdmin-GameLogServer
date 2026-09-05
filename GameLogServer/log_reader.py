@@ -24,7 +24,7 @@ class LogReader(object):
             path = re.sub(r'\\+', '/', path)
 
         # prevent traversing directories
-        if re.search('r^.+\.\.\\.+$', path):
+        if re.search(r'^.+\.\.\\.+$', path):
             return self._generate_bad_response()
 
         # must be a valid log path and log file
